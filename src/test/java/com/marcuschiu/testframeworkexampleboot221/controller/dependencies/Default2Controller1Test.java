@@ -2,7 +2,7 @@ package com.marcuschiu.testframeworkexampleboot221.controller.dependencies;
 
 import com.marcuschiu.testframeworkexampleboot221.controller.Default2Controller;
 import com.marcuschiu.testframeworkexampleboot221.service.Default1Service;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -30,7 +30,7 @@ public class Default2Controller1Test {
         when(service.greet()).thenReturn("Hello, Mock");
 
         mockMvc.perform(get("/default/2"))
-                .andDo(print())
+//                .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("Hello, Mock")));
     }

@@ -26,7 +26,7 @@ public class Default1Controller4Test {
     @org.junit.Test
     public void shouldReturnDefaultMessage() throws Exception {
         mockMvc.perform(get("/"))
-                .andDo(print())
+//                .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("Hello, World")));
     }

@@ -23,7 +23,7 @@ public class Default1Controller4v2Test {
     @org.junit.jupiter.api.Test
     public void shouldReturnDefaultMessage() throws Exception {
         mockMvc.perform(get("/"))
-                .andDo(print())
+//                .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("Hello, World")));
     }
