@@ -54,13 +54,6 @@
 <!--				</exclusion>-->
 <!--			</exclusions>-->
 		</dependency>
-
-		<dependency>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-failsafe-plugin</artifactId>
-			<version>3.0.0-M5</version>
-			<type>maven-plugin</type>
-		</dependency>
 	</dependencies>
 
 	<build>
@@ -70,18 +63,20 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>versions-maven-plugin</artifactId>
+				<version>2.2</version>
+			</plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-failsafe-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>run-tests</id>
-						<phase>integration-test</phase>
-						<goals>
-							<goal>integration-test</goal>
-							<goal>verify</goal>
-						</goals>
-					</execution>
-				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-failsafe-plugin</artifactId>
+						<version>3.0.0-M5</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
