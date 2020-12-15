@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.marcuschiu</groupId>
 	<artifactId>test-framework-example-boot-2.2.11</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.7</version>
 	<name>test-framework-example-boot-2.2.11</name>
 	<description>Demo project for Spring Boot - Test Framework (Boot 2.2.11)</description>
 
@@ -30,7 +30,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.powermock</groupId>
 			<artifactId>powermock-module-junit4</artifactId>
@@ -55,18 +54,49 @@
 <!--			</exclusions>-->
 		</dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<includeSystemScope>true</includeSystemScope>
+				</configuration>
+				<executions>
+					<execution>
+						<goals><goal>build-info</goal></goals>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>versions-maven-plugin</artifactId>
-				<version>2.2</version>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<source>11</source>
+					<target>11</target>
+				</configuration>
 			</plugin>
+<!--			maven by default will run test ending with *Test.java with `mvn test` command -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+<!--					<skipTests>${skip.surefire.tests}</skipTests>-->
+					<systemPropertyVariables>
+						<jacoco-agent.destfile>${project.build.directory}/jacoco.exec</jacoco-agent.destfile>
+					</systemPropertyVariables>
+				</configuration>
+<!--				<configuration>-->
+<!--					<excludes>-->
+<!--						<exclude>DataTest.java</exclude>-->
+<!--					</excludes>-->
+<!--					<includes>-->
+<!--						<include>DataCheck.java</include>-->
+<!--					</includes>-->
+<!--				</configuration>-->
+			</plugin>
+<!--			maven-failsafe-plugin runs tests ending with *IT.java with `mvn verify` command -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-failsafe-plugin</artifactId>
@@ -74,11 +104,96 @@
 					<dependency>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-failsafe-plugin</artifactId>
-						<version>3.0.0-M5</version>
+						<version>2.22.2</version>
 					</dependency>
 				</dependencies>
 			</plugin>
+<!--			jacoco is a code coverage plugin that outputs to /target/jacoco.exe -->
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>default-prepare-agent</id>
+						<goals><goal>prepare-agent</goal></goals>
+					</execution>
+					<execution>
+						<id>default-report</id>
+						<phase>test</phase>
+						<goals><goal>report</goal></goals>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>org.jacoco</groupId>
+						<artifactId>org.jacoco.agent</artifactId>
+						<version>0.8.6</version>
+						<classifier>runtime</classifier>
+						<scope>runtime</scope>
+					</dependency>
+				</dependencies>
+			</plugin>
+<!--			<plugin>-->
+<!--				<groupId>org.jacoco</groupId>-->
+<!--				<artifactId>jacoco-maven-plugin</artifactId>-->
+<!--				<executions>-->
+<!--					<execution>-->
+<!--						<id>default-instrument</id>-->
+<!--						<phase>process-test-classes</phase>-->
+<!--						<goals><goal>instrument</goal></goals>-->
+<!--					</execution>-->
+<!--					<execution>-->
+<!--						<id>default-restore-instrumented-classes</id>-->
+<!--						<phase>test</phase>-->
+<!--						<goals><goal>restore-instrumented-classes</goal></goals>-->
+<!--					</execution>-->
+<!--					<execution>-->
+<!--						<id>report</id>-->
+<!--						<phase>test</phase>-->
+<!--						<goals><goal>report</goal></goals>-->
+<!--						<configuration>-->
+<!--&lt;!&ndash;							ensure dataFile matches destFile specified by surefire plugin &ndash;&gt;-->
+<!--							<dataFile>${project.build.directory}/jacoco.exec</dataFile>-->
+<!--						</configuration>-->
+<!--					</execution>-->
+<!--					<execution>-->
+<!--						<id>coverage-check</id>-->
+<!--						<phase>test</phase>-->
+<!--						<goals><goal>check</goal></goals>-->
+<!--						<configuration>-->
+<!--							<rules>-->
+<!--								<rule>-->
+<!--									<element>CLASS</element>-->
+<!--									<limits>-->
+<!--										<limit>-->
+<!--											<counter>LINE</counter>-->
+<!--											<value>COVEREDRATIO</value>-->
+<!--											<minimum>80%</minimum>-->
+<!--										</limit>-->
+<!--									</limits>-->
+<!--								</rule>-->
+<!--							</rules>-->
+<!--						</configuration>-->
+<!--					</execution>-->
+<!--				</executions>-->
+<!--				<dependencies>-->
+<!--					<dependency>-->
+<!--						<groupId>org.jacoco</groupId>-->
+<!--						<artifactId>org.jacoco.agent</artifactId>-->
+<!--						<version>0.8.3</version>-->
+<!--						<classifier>runtime</classifier>-->
+<!--						<scope>runtime</scope>-->
+<!--					</dependency>-->
+<!--				</dependencies>-->
+<!--			</plugin>-->
 		</plugins>
+		<pluginManagement>
+			<plugins>
+			</plugins>
+		</pluginManagement>
 	</build>
-
+	<dependencyManagement>
+		<dependencies>
+		</dependencies>
+	</dependencyManagement>
 </project>
