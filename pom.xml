@@ -119,7 +119,7 @@
 					</execution>
 					<execution>
 						<id>default-report</id>
-						<phase>test</phase>
+						<phase>verify</phase>
 						<goals><goal>report</goal></goals>
 					</execution>
 				</executions>
