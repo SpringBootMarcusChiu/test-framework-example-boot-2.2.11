@@ -12,11 +12,18 @@ public class PropertyUsingComponent {
     @Value("${string.two}")
     String stringTwo;
 
+    @Value("${string.three}")
+    String stringThree;
+
     public String getStringOne() {
         return stringOne;
     }
 
     public String getStringTwo() {
         return stringTwo;
+    }
+
+    public String getStringThree() {
+        return stringThree;
     }
 }

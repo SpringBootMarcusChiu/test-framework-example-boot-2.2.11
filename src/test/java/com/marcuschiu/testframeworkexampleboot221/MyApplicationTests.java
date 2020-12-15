@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.Assert.assertNotNull;
 
 @SpringBootTest
-class ApplicationTests {
+class MyApplicationTests {
 
 	@Autowired
 	PropertyUsingComponent propertyUsingComponent;

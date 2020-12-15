@@ -9,7 +9,7 @@ import org.springframework.test.context.TestPropertySource;
 import static org.junit.Assert.assertEquals;
 
 /**
- * @ContextConfiguration - loads and configures the ApplicationContext for the scenario
+ * @SpringBootTest - loads and configures the ApplicationContext for the scenario
  * @TestPropertySource - class-level annotation to define a new configuration source
  * and overrides any properties in PropertyUsingComponent.class
  */
@@ -22,11 +22,13 @@ public class LocationsTestPropertySourceIntegrationTest {
 
     @Test
     public void test() {
-        // stringOne property overridden by src/test/resources/application-test.properties
-        assertEquals(
-                "@TestPropertySource(locations={'/application-test.properties'})",
+        // stringOne property from man/resources/application.properties is
+        // overridden by src/test/resources/application-test.properties
+        assertEquals("@TestPropertySource(locations={'/application-test.properties'})",
                 propertyUsingComponent.getStringOne());
-        // stringTwo property is NOT overridden
-        assertEquals("string two", propertyUsingComponent.getStringTwo());
+        // stringTwo property from man/resources/application.properties is
+        // is NOT overridden
+        assertEquals("string three",
+                propertyUsingComponent.getStringThree());
     }
 }
