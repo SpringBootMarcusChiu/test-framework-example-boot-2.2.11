@@ -3,3 +3,6 @@
 to see the difference:
 - right click run `with` package
 - right click run `without` package
+
+for more examples see:
+- https://www.baeldung.com/spring-dirtiescontext
