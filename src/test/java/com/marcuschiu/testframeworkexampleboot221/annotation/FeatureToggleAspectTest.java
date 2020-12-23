@@ -3,18 +3,29 @@ package com.marcuschiu.testframeworkexampleboot221.annotation;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
-import org.springframework.context.annotation.Import;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-@EnableScheduling // enables @Scheduled
-@EnableAspectJAutoProxy // enables @Aspect, replaces @Import(AnnotationAwareAspectJAutoProxyCreator.class)
+/**
+ * @EnableScheduling
+ * - enables @Scheduled
+ * @EnableAspectJAutoProxy
+ * - enables @Aspect, replaces @Import(AnnotationAwareAspectJAutoProxyCreator.class)
+ * @ExtendWith(SpringExtension.class)
+ * - SpringExtension class is provided by Spring 5 and integrates the Spring
+ *   TestContext Framework into JUnit 5
+ * - enables you to use Spring test framework features in your tests
+ *   like for example: @MockBean, @Autowired, etc
+ * @ContextConfiguration (classes = {..})
+ * -
+ */
+@EnableScheduling
+@EnableAspectJAutoProxy
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = { FeatureToggleAspect.class, FeatureToggleAspectTest.DefaultComponent.class })
 public class FeatureToggleAspectTest {

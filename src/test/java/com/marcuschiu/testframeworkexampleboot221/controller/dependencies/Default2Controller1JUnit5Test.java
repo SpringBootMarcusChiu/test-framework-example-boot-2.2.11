@@ -11,13 +11,20 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.hamcrest.Matchers.containsString;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-
+/**
+ * @WebMvcTest(Default2Controller.class)
+ * - just loads Default2Controller.class not every @Controller beans
+ * - contains:
+ *   - @AutoConfigureCache -
+ *   - @AutoConfigureWebMvc - adds WebMvc into application context
+ *   - @AutoConfigureMockMvc - adds MockMvc into application context
+ *   - @ImportAutoConfiguration -
+ */
 @WebMvcTest(Default2Controller.class)
-public class Default2Controller1Test {
+public class Default2Controller1JUnit5Test {
 
     @Autowired
     MockMvc mockMvc;

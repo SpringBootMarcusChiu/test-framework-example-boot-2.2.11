@@ -17,6 +17,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<powermock.version>1.7.0</powermock.version>
+		<awaitility.version>4.0.3</awaitility.version>
 	</properties>
 
 	<dependencies>
@@ -33,6 +34,13 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.awaitility</groupId>
+			<artifactId>awaitility</artifactId>
+			<version>${awaitility.version}</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.powermock</groupId>

@@ -12,11 +12,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
- * @AutoConfigureMockMvc - Test Controller by loading the full Spring application context but without the server
+ * @AutoConfigureMockMvc
+ * - adds a MockMvc instance to the application context
+ * - Test Controller by loading the full Spring application context but without the server
  */
 @SpringBootTest
 @AutoConfigureMockMvc
-public class Default1Controller2Test {
+public class Default1Controller2JUnit5Test {
 
     @Autowired
     private MockMvc mockMvc;

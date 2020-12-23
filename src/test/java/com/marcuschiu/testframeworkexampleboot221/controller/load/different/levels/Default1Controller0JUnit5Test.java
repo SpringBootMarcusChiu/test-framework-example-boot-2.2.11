@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
  * Test Whether Controller is loaded into app context
  */
 @SpringBootTest
-public class Default1Controller0Test {
+public class Default1Controller0JUnit5Test {
 
     @Autowired
     Default1Controller controller;

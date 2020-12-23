@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
  * WebEnvironment=RANDOM_PORT to start the server with a random port (useful to avoid conflicts in test environments)
  */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class Default1Controller1Test {
+public class Default1Controller1JUnit5Test {
 
     // injection of the random port
     @LocalServerPort

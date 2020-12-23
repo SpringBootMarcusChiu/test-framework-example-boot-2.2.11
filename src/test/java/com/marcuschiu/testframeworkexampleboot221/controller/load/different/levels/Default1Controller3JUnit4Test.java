@@ -18,18 +18,28 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
- * @WebMvcTest - Test Controller by only loading the web layer (this includes Default2Controller)
+ * @RunWith(SpringJUnit4ClassRunner.class)
+ * @RunWith(SpringRunner.class)
+ * - provides support for loading a Spring ApplicationContext and having
+ *   beans @Autowired into your test instance
+ * @WebMvcTest
+ * - Test Controller by only loading the web layer (this includes Default2Controller)
+ * - contains:
+ *   - @AutoConfigureCache -
+ *   - @AutoConfigureWebMvc - adds WebMvc into application context
+ *   - @AutoConfigureMockMvc - adds MockMvc into application context
+ *   - @ImportAutoConfiguration -
  * This test will FAIL if any controller has dependencies! UNLESS @MockBean for each Autowired bean/component
  */
-@RunWith(SpringRunner.class)
+@RunWith(SpringRunner.class) // REQUIRED FOR JUNIT 4
 @WebMvcTest
-public class Default1Controller3Test {
+public class Default1Controller3JUnit4Test {
 
     @Autowired
     MockMvc mockMvc;
 
     @MockBean
-    Default1Service default1Service; // for Default2Controller
+    Default1Service default1Service; // dependency for Default2Controller
 
     @org.junit.Test
     public void shouldReturnDefaultMessage() throws Exception {
