@@ -1,4 +1,4 @@
-package com.marcuschiu.testframeworkexampleboot221.mockito.annotation;
+package com.marcuschiu.testframeworkexampleboot221.mockito.runners;
 
 import com.marcuschiu.testframeworkexampleboot221.service.Default1Service;
 import org.junit.Assert;
@@ -11,7 +11,7 @@ import org.mockito.junit.MockitoJUnitRunner;
  * @RunWith(MockitoJUnitRunner.class) - enables use of @Mock
  */
 @RunWith(MockitoJUnitRunner.class)
-public class Mockito1ExampleJUnit4Test {
+public class M2_Annotations_Runner_JUnit4Test {
 
     /**
      * @Mock - replaces Default1Service default1Service = Mockito.mock(Default1Service.class);

@@ -4,6 +4,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.assertTrue;
 
+/**
+ * Integration Test
+ * - invoked by `mvn verify` with the maven-failsafe-plugin in the pom.xml
+ */
 public class Sample3IT {
 
     @Test

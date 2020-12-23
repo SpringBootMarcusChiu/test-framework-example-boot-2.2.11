@@ -1,20 +1,18 @@
-package com.marcuschiu.testframeworkexampleboot221.mockito.annotation;
+package com.marcuschiu.testframeworkexampleboot221.mockito.runners;
 
 import com.marcuschiu.testframeworkexampleboot221.service.Default1Service;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 /**
  * @ExtendWith(MockitoExtension.class) - enables use of @Mock
  */
 @ExtendWith(MockitoExtension.class)
-public class Mockito1ExampleJUnit5Test {
+public class M2_Annotations_Runner_JUnit5Test {
 
     /**
      * @Mock - replaces Default1Service default1Service = Mockito.mock(Default1Service.class);
@@ -24,7 +22,7 @@ public class Mockito1ExampleJUnit5Test {
 
     @Test
     public void givenCountMethodMocked_WhenCountInvoked_ThenMockedValueReturned() {
-        // replaced by @Mock above
+        // line below is replaced by @Mock above
 //        Default1Service default1Service = Mockito.mock(Default1Service.class);
         Mockito.when(default1Service.greet()).thenReturn("Jesus Christ");
 

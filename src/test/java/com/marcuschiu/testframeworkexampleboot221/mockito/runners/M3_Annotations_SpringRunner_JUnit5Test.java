@@ -1,20 +1,25 @@
-package com.marcuschiu.testframeworkexampleboot221.mockito.annotation;
+package com.marcuschiu.testframeworkexampleboot221.mockito.runners;
 
 import com.marcuschiu.testframeworkexampleboot221.service.Default1Service;
 import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.ApplicationContext;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
- * @RunWith(SpringRunner.class) - allows @MockBean
+ * @ExtendWith(SpringExtension.class)
+ * - tells JUnit 5 to enable Spring support
+ * - allows @MockBean
  */
-@RunWith(SpringRunner.class)
-public class MockBean1ExampleJUnit4Test {
+@ExtendWith(SpringExtension.class)
+public class M3_Annotations_SpringRunner_JUnit5Test {
 
     /**
      * @MockBean - adds mock bean to the applicationContext

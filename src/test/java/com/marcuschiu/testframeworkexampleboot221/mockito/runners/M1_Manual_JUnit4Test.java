@@ -1,11 +1,11 @@
-package com.marcuschiu.testframeworkexampleboot221.mockito.method;
+package com.marcuschiu.testframeworkexampleboot221.mockito.runners;
 
 import com.marcuschiu.testframeworkexampleboot221.service.Default1Service;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-public class Mockito1ExampleJUnit5Test {
+public class M1_Manual_JUnit4Test {
     @Test
     public void givenCountMethodMocked_WhenCountInvoked_ThenMockedValueReturned() {
         Default1Service default1Service = Mockito.mock(Default1Service.class);
