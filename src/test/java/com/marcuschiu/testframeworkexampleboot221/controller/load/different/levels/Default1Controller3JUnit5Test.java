@@ -1,12 +1,10 @@
 package com.marcuschiu.testframeworkexampleboot221.controller.load.different.levels;
 
 import com.marcuschiu.testframeworkexampleboot221.service.Default1Service;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.ArrayList;
@@ -18,10 +16,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
- * @RunWith(SpringJUnit4ClassRunner.class)
- * @RunWith(SpringRunner.class)
- * - provides support for loading a Spring ApplicationContext and having
- *   beans @Autowired into your test instance
  * @WebMvcTest
  * - Test Controller by only loading the web layer (this includes Default2Controller)
  * - contains:
@@ -31,9 +25,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  *   - @ImportAutoConfiguration -
  * This test will FAIL if any controller has dependencies! UNLESS @MockBean for each Autowired bean/component
  */
-@RunWith(SpringRunner.class) // REQUIRED FOR JUNIT 4
+//@ExtendWith(SpringExtension.class) // Included in @WebMvcTest
 @WebMvcTest
-public class Default1Controller3JUnit4Test {
+public class Default1Controller3JUnit5Test {
 
     @Autowired
     MockMvc mockMvc;

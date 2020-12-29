@@ -15,7 +15,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @WebMvcTest(Default1Controller.class)
  * - Test Controller by only loading a specific Controller in the web layer
  */
-//@ExtendWith(SpringExtension.class) // NOT REQUIRED FOR JUNIT 5
+//@ExtendWith(SpringExtension.class) // Included in @WebMvcTest
 @WebMvcTest(Default1Controller.class)
 public class Default1Controller4JUnit5Test {
 
