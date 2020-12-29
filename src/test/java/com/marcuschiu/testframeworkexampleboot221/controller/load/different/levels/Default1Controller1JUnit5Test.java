@@ -12,7 +12,10 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /**
  * Testing Controller By Starting Entire Server
- * WebEnvironment=RANDOM_PORT to start the server with a random port (useful to avoid conflicts in test environments)
+ * WebEnvironment=RANDOM_PORT to start an EMBEDDED http server with a random port (useful to avoid conflicts in test environments)
+ * WebEnvironment=DEFINED_PORT to start an EMBEDDED http server with application.properties port
+ * WebEnvironment=MOCK to start a MOCK http server
+ * WebEnvironment=NONE no http server
  */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class Default1Controller1JUnit5Test {
