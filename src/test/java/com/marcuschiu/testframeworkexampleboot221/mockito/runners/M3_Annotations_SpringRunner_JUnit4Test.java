@@ -11,7 +11,11 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
- * @RunWith(SpringRunner.class) - allows @MockBean
+ * @RunWith(SpringJUnit4ClassRunner.class)
+ * @RunWith(SpringRunner.class)
+ * - allows @MockBean
+ * - provides support for loading a Spring ApplicationContext and having
+ *   beans @Autowired into your test instance
  */
 @RunWith(SpringRunner.class)
 public class M3_Annotations_SpringRunner_JUnit4Test {
