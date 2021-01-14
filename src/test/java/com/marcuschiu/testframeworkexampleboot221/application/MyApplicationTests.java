@@ -11,7 +11,7 @@ import static org.junit.Assert.assertNotNull;
 
 /**
  * @SpringBootTest
- * - scans everything basically
+ * - scans everything basically (including components/beans in the entire test package
  */
 @SpringBootTest
 class MyApplicationTests {
