@@ -1,0 +1,2 @@
+- based on: https://howtodoinjava.com/spring-boot2/testing/springboot-test-configuration/
+- confluence: http://confluence.marcuschiu.com/x/EgBpAQ
