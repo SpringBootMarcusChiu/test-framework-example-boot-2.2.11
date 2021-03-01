@@ -1,10 +1,8 @@
 package com.marcuschiu.testframeworkexampleboot221.mockito.runners;
 
 import com.marcuschiu.testframeworkexampleboot221.service.Default1Service;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.mock.mockito.MockBeans;

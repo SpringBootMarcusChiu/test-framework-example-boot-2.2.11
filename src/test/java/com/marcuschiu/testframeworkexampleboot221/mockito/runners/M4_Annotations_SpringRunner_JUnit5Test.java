@@ -3,13 +3,11 @@ package com.marcuschiu.testframeworkexampleboot221.mockito.runners;
 import com.marcuschiu.testframeworkexampleboot221.service.Default1Service;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.mock.mockito.MockBeans;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * @ExtendWith(SpringExtension.class)
