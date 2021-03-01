@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -37,10 +39,19 @@ public class Default1Controller1JUnit5Test {
     }
 
     @Test
-    public void greetingShouldReturnDefaultMessage() throws Exception {
+    public void greetingShouldReturnDefaultMessage() {
         System.out.println(controller.i);
         controller.i++;
         String actual = restTemplate.getForObject("http://localhost:" + port + "/", String.class);
         assertEquals("Hello, World", actual);
+    }
+
+    @Test
+    public void greetingShouldReturnDefaultMessage_entity() {
+        System.out.println(controller.i);
+        controller.i++;
+        ResponseEntity<String> actual = restTemplate.getForEntity("http://localhost:" + port + "/", String.class);
+        assertEquals("Hello, World", actual.getBody());
+        assertEquals(HttpStatus.OK, actual.getStatusCode());
     }
 }

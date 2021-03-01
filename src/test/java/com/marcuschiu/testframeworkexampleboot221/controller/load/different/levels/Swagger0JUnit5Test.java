@@ -21,16 +21,15 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 // similar to MockMVC with an application context
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
 @AutoConfigureMockMvc
-public class Default1Controller2aJUnit5Test {
+public class Swagger0JUnit5Test {
 
     @Autowired
     private MockMvc mockMvc;
 
     @Test
-    public void shouldReturnDefaultMessage() throws Exception {
-        mockMvc.perform(get("/"))
+    public void shouldReturnDefaultMessage2() throws Exception {
+        mockMvc.perform(get("/swagger-ui.html"))
 //                .andDo(print()) // sys output test stuff
-                .andExpect(status().isOk())
-                .andExpect(content().string(containsString("Hello, World")));
+                .andExpect(status().isOk());
     }
 }
