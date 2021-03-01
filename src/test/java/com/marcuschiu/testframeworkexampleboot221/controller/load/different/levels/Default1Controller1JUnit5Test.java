@@ -27,6 +27,7 @@ public class Default1Controller1JUnit5Test {
     int port;
 
     // Spring Boot automatically provided
+    // https://www.baeldung.com/spring-boot-testresttemplate
     @Autowired
     TestRestTemplate restTemplate;
 
