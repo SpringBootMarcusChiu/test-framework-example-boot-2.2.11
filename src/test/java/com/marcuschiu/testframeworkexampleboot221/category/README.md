@@ -1,1 +1,0 @@
-see: https://mkyong.com/unittest/junit-categories-test/
