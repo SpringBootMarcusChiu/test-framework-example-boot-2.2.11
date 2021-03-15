@@ -1,5 +1,6 @@
 package com.marcuschiu.testframeworkexampleboot221.junit.parameterized;
 
+import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
 
@@ -52,4 +53,16 @@ public class JUnit5Test {
     }
 
     // @ArgumentSource to specify a custom, reusable ArgumentsProvider
+    @ParameterizedTest
+    @ArgumentsSource(StringArgumentsProvider.class)
+    void testWithArgumentsSource(String argument) {
+        assertNotNull(argument);
+    }
+
+    public static class StringArgumentsProvider implements ArgumentsProvider {
+        @Override
+        public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
+            return Stream.of("Hello", "world").map(Arguments::of);
+        }
+    }
 }
