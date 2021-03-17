@@ -1,6 +1,7 @@
 package com.marcuschiu.testframeworkexampleboot221.mockito;
 
 import com.marcuschiu.testframeworkexampleboot221.spring.service.Default1Service;
+import com.marcuschiu.testframeworkexampleboot221.spring.service.Default2Service;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -8,9 +9,6 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -43,24 +41,26 @@ public class M2_Annotations_Runner_JUnit5Test {
     }
 
     @Spy
-    List<String> spyList = new ArrayList<>();
+    Default2Service default2Service;
 
     @Test
     public void whenUsingTheSpyAnnotation_thenObjectIsSpied() {
         // replaced with @RunWith(MockitoJUnitRunner.class)
 //        MockitoAnnotations.initMocks(this);
 
-        spyList.add("one");
-        spyList.add("two");
+        // exercise
+        default2Service.greet();
 
-        Mockito.verify(spyList).add("one");
-        Mockito.verify(spyList).add("two");
+        // behavior verification - default2ServiceFromContext is a Test Spy
+        // - Meszaros refers to stubs that use behavior verification as a Test Spy
+        Mockito.verify(default2Service).greet();
+        // state verification - default2ServiceFromContext is a stub
+        assertEquals(1, default2Service.greetCount);
 
-        assertEquals(2, spyList.size());
 
         // stubbing spy
-        Mockito.when(spyList.toString()).thenReturn("Jesus Christ");
-        // verify stub
-        assertEquals("Jesus Christ", spyList.toString());
+        Mockito.when(default2Service.toString()).thenReturn("Jesus Christ");
+        // exercise and verify stub
+        assertEquals("Jesus Christ", default2Service.toString());
     }
 }
