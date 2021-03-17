@@ -33,5 +33,10 @@ public class M1_Manual_JUnit5Test {
         Mockito.verify(spyList).add("two");
 
         assertEquals(2, spyList.size());
+
+        // stubbing spy
+        Mockito.when(spyList.toString()).thenReturn("Jesus Christ");
+        // verify stub
+        assertEquals("Jesus Christ", spyList.toString());
     }
 }
