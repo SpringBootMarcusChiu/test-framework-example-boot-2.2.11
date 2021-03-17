@@ -2,15 +2,11 @@ package com.marcuschiu.testframeworkexampleboot221.mockito;
 
 import com.marcuschiu.testframeworkexampleboot221.spring.service.Default1Service;
 import com.marcuschiu.testframeworkexampleboot221.spring.service.Default2Service;
-import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.Spy;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -34,7 +30,7 @@ public class M2_Annotations_Initializer_JUnit5Test {
 
         String greet = default1Service.greet();
 
-        Assert.assertEquals("Jesus Christ", greet);
+        assertEquals("Jesus Christ", greet);
         Mockito.verify(default1Service).greet(); // verifies the mocked method was indeed called
     }
 

@@ -2,7 +2,6 @@ package com.marcuschiu.testframeworkexampleboot221.mockito;
 
 import com.marcuschiu.testframeworkexampleboot221.spring.service.Default1Service;
 import com.marcuschiu.testframeworkexampleboot221.spring.service.Default2Service;
-import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
@@ -40,7 +39,7 @@ public class M3_Annotations_SpringRunner_JUnit5Test {
         Default1Service default1ServiceFromContext = context.getBean(Default1Service.class);
         String greeting = default1ServiceFromContext.greet();
 
-        Assert.assertEquals("Jesus Christ", greeting);
+        assertEquals("Jesus Christ", greeting);
         Mockito.verify(default1Service).greet();
     }
 
