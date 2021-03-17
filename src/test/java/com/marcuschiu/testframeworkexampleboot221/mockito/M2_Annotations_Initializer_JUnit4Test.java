@@ -1,8 +1,7 @@
-package com.marcuschiu.testframeworkexampleboot221.junit.mockito.runners;
+package com.marcuschiu.testframeworkexampleboot221.mockito;
 
 import com.marcuschiu.testframeworkexampleboot221.spring.service.Default1Service;
 import org.junit.Assert;
-import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
@@ -13,7 +12,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class M2_Annotations_Initializer_JUnit5Test {
+public class M2_Annotations_Initializer_JUnit4Test {
 
     /**
      * @Mock - replaces Default1Service default1Service = Mockito.mock(Default1Service.class);
@@ -21,9 +20,9 @@ public class M2_Annotations_Initializer_JUnit5Test {
     @Mock
     Default1Service default1Service;
 
-    @Test
+    @org.junit.Test
     public void givenCountMethodMocked_WhenCountInvoked_ThenMockedValueReturned() {
-        // line below is replaced by @Mock above
+        // replaced by @Mock above
 //        Default1Service default1Service = Mockito.mock(Default1Service.class);
 
         // Initializes @Mock default1Service
@@ -40,7 +39,7 @@ public class M2_Annotations_Initializer_JUnit5Test {
     @Spy
     List<String> spyList = new ArrayList<>();
 
-    @Test
+    @org.junit.Test
     public void whenUsingTheSpyAnnotation_thenObjectIsSpied() {
         MockitoAnnotations.initMocks(this);
 

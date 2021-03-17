@@ -1,12 +1,13 @@
-package com.marcuschiu.testframeworkexampleboot221.junit.mockito.runners;
+package com.marcuschiu.testframeworkexampleboot221.mockito;
 
 import com.marcuschiu.testframeworkexampleboot221.spring.service.Default1Service;
 import org.junit.Assert;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.Spy;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,10 +15,10 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * @RunWith(MockitoJUnitRunner.class) - enables use of @Mock
+ * @ExtendWith(MockitoExtension.class) - enables use of @Mock
  */
-@RunWith(MockitoJUnitRunner.class)
-public class M2_Annotations_Runner_JUnit4Test {
+@ExtendWith(MockitoExtension.class)
+public class M2_Annotations_Runner_JUnit5Test {
 
     /**
      * @Mock - replaces Default1Service default1Service = Mockito.mock(Default1Service.class);
@@ -25,9 +26,9 @@ public class M2_Annotations_Runner_JUnit4Test {
     @Mock
     Default1Service default1Service;
 
-    @org.junit.Test
+    @Test
     public void givenCountMethodMocked_WhenCountInvoked_ThenMockedValueReturned() {
-        // replaced by @Mock above
+        // line below is replaced by @Mock above
 //        Default1Service default1Service = Mockito.mock(Default1Service.class);
 
         // replaced with @RunWith(MockitoJUnitRunner.class)
@@ -44,7 +45,7 @@ public class M2_Annotations_Runner_JUnit4Test {
     @Spy
     List<String> spyList = new ArrayList<>();
 
-    @org.junit.Test
+    @Test
     public void whenUsingTheSpyAnnotation_thenObjectIsSpied() {
         // replaced with @RunWith(MockitoJUnitRunner.class)
 //        MockitoAnnotations.initMocks(this);

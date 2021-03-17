@@ -1,4 +1,4 @@
-package com.marcuschiu.testframeworkexampleboot221.junit.mockito.runners;
+package com.marcuschiu.testframeworkexampleboot221.mockito;
 
 import com.marcuschiu.testframeworkexampleboot221.spring.service.Default1Service;
 import org.junit.Assert;
