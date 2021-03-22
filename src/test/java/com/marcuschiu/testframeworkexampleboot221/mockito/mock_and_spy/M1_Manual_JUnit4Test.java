@@ -1,45 +1,28 @@
-package com.marcuschiu.testframeworkexampleboot221.mockito;
+package com.marcuschiu.testframeworkexampleboot221.mockito.mock_and_spy;
 
 import com.marcuschiu.testframeworkexampleboot221.spring.service.Default1Service;
 import com.marcuschiu.testframeworkexampleboot221.spring.service.Default2Service;
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
-import org.mockito.Spy;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class M2_Annotations_Initializer_JUnit5Test {
-
-    /**
-     * @Mock - replaces Default1Service default1Service = Mockito.mock(Default1Service.class);
-     */
-    @Mock
-    Default1Service default1Service;
-
+public class M1_Manual_JUnit4Test {
     @Test
     public void givenCountMethodMocked_WhenCountInvoked_ThenMockedValueReturned() {
-        // line below is replaced by @Mock above
-//        Default1Service default1Service = Mockito.mock(Default1Service.class);
-
-        // Initializes @Mock default1Service
-        MockitoAnnotations.initMocks(this);
-
+        Default1Service default1Service = Mockito.mock(Default1Service.class);
         Mockito.when(default1Service.greet()).thenReturn("Jesus Christ");
 
         String greet = default1Service.greet();
 
-        assertEquals("Jesus Christ", greet);
+        Assert.assertEquals("Jesus Christ", greet);
         Mockito.verify(default1Service).greet(); // verifies the mocked method was indeed called
     }
 
-    @Spy
-    Default2Service default2Service;
-
-    @Test
+    @org.junit.Test
     public void whenUsingTheSpyAnnotation_thenObjectIsSpied() {
-        MockitoAnnotations.initMocks(this);
+        Default2Service default2Service = Mockito.spy(Default2Service.class);
 
         // exercise
         default2Service.greet();

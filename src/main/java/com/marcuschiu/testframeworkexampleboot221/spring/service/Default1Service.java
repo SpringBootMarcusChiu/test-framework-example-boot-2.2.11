@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 public class Default1Service {
 
     public String greet() {
+        System.out.println(getClass().getSimpleName() + "greet() is called");
         return "Hello, World";
     }
 }

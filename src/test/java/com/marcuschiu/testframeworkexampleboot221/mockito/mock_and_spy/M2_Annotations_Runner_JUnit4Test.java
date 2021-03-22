@@ -1,4 +1,4 @@
-package com.marcuschiu.testframeworkexampleboot221.mockito;
+package com.marcuschiu.testframeworkexampleboot221.mockito.mock_and_spy;
 
 import com.marcuschiu.testframeworkexampleboot221.spring.service.Default1Service;
 import com.marcuschiu.testframeworkexampleboot221.spring.service.Default2Service;
