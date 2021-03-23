@@ -9,4 +9,9 @@ public class Default1Service {
         System.out.println(getClass().getSimpleName() + "greet() is called");
         return "Hello, World";
     }
+
+    public String repeat(final String str) {
+        System.out.println(getClass().getSimpleName() + "clone() is called");
+        return str;
+    }
 }

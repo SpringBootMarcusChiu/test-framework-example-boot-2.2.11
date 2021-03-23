@@ -12,4 +12,9 @@ public class Default2Service {
         greetCount++;
         return "Hello, World";
     }
+
+    public String repeat(final String str) {
+        System.out.println(getClass().getSimpleName() + "clone() is called");
+        return str;
+    }
 }

@@ -13,7 +13,7 @@ import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class WhenTest {
+public class SpyVsMockTest {
 
     @Spy
     Default1Service serviceSpy;
