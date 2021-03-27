@@ -17,7 +17,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * - adds a MockMvc instance to the application context
  * - Test Controller by loading the full Spring application context but without the server
  */
-@SpringBootTest // = @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
+@SpringBootTest // == @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
 @AutoConfigureMockMvc
 public class Default1Controller2bJUnit5Test {
 
