@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
  * WebEnvironment=NONE no http server
  */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class Default1Controller1JUnit5Test {
+public class Default1Controller1bJUnit5Test {
 
     // injection of the random port
     @LocalServerPort
@@ -40,7 +40,8 @@ public class Default1Controller1JUnit5Test {
     }
 
     @Test
-    public void greetingShouldReturnDefaultMessage() {
+    public void greetingShouldReturnDefaultMessage() throws InterruptedException {
+        System.out.println("port number: " + port);
         System.out.println(controller.i);
         controller.i++;
         String actual = restTemplate.getForObject("http://localhost:" + port + "/", String.class);
