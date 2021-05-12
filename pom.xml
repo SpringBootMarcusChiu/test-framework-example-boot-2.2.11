@@ -49,13 +49,42 @@
 			<version>${swagger.version}</version>
 		</dependency>
 
-		<!-- Test Libraries -->
+		<!-- TEST LIBRARIES -->
+
+		<!-- Test Containers -->
+		<dependency>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>testcontainers</artifactId>
+			<version>1.15.3</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<version>1.15.3</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>mysql</artifactId>
+			<version>1.15.3</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>1.15.3</version>
+		</dependency>
+
+		<!-- Awaitility -->
 		<dependency>
 			<groupId>org.awaitility</groupId>
 			<artifactId>awaitility</artifactId>
 			<version>${awaitility.version}</version>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- PowerMock -->
 		<dependency>
 			<groupId>org.powermock</groupId>
 			<artifactId>powermock-module-junit4</artifactId>
@@ -68,6 +97,8 @@
 			<version>${powermock.version}</version>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- Spring Boot Test Library (includes JUnit & Mockito) -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -80,6 +111,7 @@
 <!--			</exclusions>-->
 		</dependency>
 	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -219,6 +251,7 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+
 	<dependencyManagement>
 		<dependencies>
 		</dependencies>
