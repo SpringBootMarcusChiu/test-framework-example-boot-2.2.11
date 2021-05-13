@@ -10,7 +10,7 @@ import org.springframework.test.context.DynamicPropertySource;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
-class ExampleTest {
+class DynamicPropertySourceExampleTest {
 
     static String property = "new";
 
