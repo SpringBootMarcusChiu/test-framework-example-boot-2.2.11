@@ -1,6 +1,6 @@
-package com.marcuschiu.testframeworkexampleboot221.spring.testconfiguration;
+package com.marcuschiu.testframeworkexampleboot221.spring.context.testconfiguration;
 
-import com.marcuschiu.testframeworkexampleboot221.spring.testconfiguration.config.DefaultComponent;
+import com.marcuschiu.testframeworkexampleboot221.spring.context.testconfiguration.config.DefaultComponent;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

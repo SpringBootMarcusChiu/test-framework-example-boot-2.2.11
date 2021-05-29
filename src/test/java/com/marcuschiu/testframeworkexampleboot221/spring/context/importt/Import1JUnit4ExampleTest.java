@@ -1,5 +1,6 @@
-package com.marcuschiu.testframeworkexampleboot221.spring.importt;
+package com.marcuschiu.testframeworkexampleboot221.spring.context.importt;
 
+import com.marcuschiu.testframeworkexampleboot221.spring.context.Extra1Component;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,14 +9,14 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.Assert;
 
 @RunWith(SpringRunner.class)
-@Import(ExtraComponent.class)
+@Import(Extra1Component.class)
 public class Import1JUnit4ExampleTest {
 
     @Autowired
-    ExtraComponent extraComponent;
+    Extra1Component extra1Component;
 
     @Test
     public void test() {
-        Assert.notNull(extraComponent, "extraComponent is null");
+        Assert.notNull(extra1Component, "extraComponent is null");
     }
 }

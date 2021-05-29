@@ -1,4 +1,4 @@
-package com.marcuschiu.testframeworkexampleboot221.spring.testconfiguration.config;
+package com.marcuschiu.testframeworkexampleboot221.spring.context.testconfiguration.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
